@@ -1,0 +1,13 @@
+.holder {
+    background-color: rgb(88, 84, 84);
+    margin-left: 12rem;
+    margin-right: 12rem;
+    margin-bottom: 5px;
+    text-align: left;
+}
+h2{
+    color:rgb(238, 165, 8);
+}
+p{
+    margin-top: -20px;
+}

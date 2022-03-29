@@ -14,3 +14,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.holder{
+  background-color: rgb(88, 84, 84);
+  margin-left: 12rem;
+  margin-right: 12rem;
+  padding: 0.5rem;
+}
+.inputHolder{
+  text-align: left;
+  margin-left: 2px;
+  width: 40%;
+}
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 10px;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  width: 90%;
+  background-color: #fff;
+  border: 1px solid rgb(5, 20, 153);
+  border-radius: 17px;
+  
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: rgb(5, 20, 153);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.form-inline button:hover {
+    background-color: rgb(6, 25, 190);
+}
+
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
