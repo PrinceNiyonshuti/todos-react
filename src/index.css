@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(54, 50, 50);
+  background-color: #333333;
   color: white;
 
 }
@@ -16,7 +16,7 @@ code {
 }
 
 .holder{
-  background-color: rgb(88, 84, 84);
+  background-color: #444444;
   margin-left: 12rem;
   margin-right: 12rem;
   padding: 0.5rem;
@@ -42,14 +42,14 @@ code {
   padding: 10px;
   width: 90%;
   background-color: #fff;
-  border: 1px solid rgb(5, 20, 153);
+  border: 1px solid #ff9900;
   border-radius: 17px;
   
 }
 
 .form-inline button {
   padding: 10px 20px;
-  background-color: rgb(5, 20, 153);
+  background-color: #ff9900;
   border: none;
   color: white;
   cursor: pointer;
@@ -57,7 +57,7 @@ code {
 }
 
 .form-inline button:hover {
-    background-color: rgb(6, 25, 190);
+    background-color: #ff9900;
 }
 
 

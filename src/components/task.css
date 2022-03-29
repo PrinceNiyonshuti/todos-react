@@ -1,5 +1,5 @@
 .task-holder {
-    background-color: rgb(88, 84, 84);
+    background-color: #444444;
     margin-left: 12rem;
     margin-right: 12rem;
     margin-bottom: 5px;
@@ -11,7 +11,7 @@
     padding-left: 2rem;
 }
 h2{
-    color:rgb(238, 165, 8);
+    color:#ff9900;
 }
 p{
     margin-top: -20px;
@@ -30,11 +30,11 @@ p{
     margin: 5px;
 }
 .complete-btn{
-    border: solid 2px rgb(35, 151, 31);
-    color: rgb(35, 151, 31);
+    border: solid 2px #6eb299;
+    color: #6eb299;
     ;
 }
 .delete-btn{
-    border: solid 2px rgb(185, 44, 44);
-    color: rgb(185, 44, 44);
+    border: solid 2px #be6f6f;
+    color: #be6f6f;
 }
