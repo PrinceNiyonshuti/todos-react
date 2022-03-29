@@ -7,10 +7,14 @@ function task({ taskData }) {
     return (
         <div>
             {taskData.map((task) => (
-				<div className="holder" key={task.id}>
-                    <div>
+				<div className="task-holder" key={task.id}>
+                    <div className="task-content">
                         <h2>{task.name}</h2>
                         <p>{task.description}</p>
+                    </div>
+                    <div className="task-actions">
+                        <button className="btn complete-btn" type="submit">Complete</button>
+                        <button className="btn delete-btn" type="submit">Delete</button>
                     </div>
                 </div>
 			))}
