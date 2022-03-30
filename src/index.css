@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(54, 50, 50);
+  background-color: #333333;
   color: white;
 
 }
@@ -13,4 +13,61 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.holder{
+  background-color: #444444;
+  margin-left: 12rem;
+  margin-right: 12rem;
+  padding: 0.5rem;
+}
+.inputHolder{
+  text-align: left;
+  margin-left: 2px;
+  width: 40%;
+}
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 10px;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  width: 90%;
+  background-color: #fff;
+  border: 1px solid #ff9900;
+  border-radius: 17px;
+  
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.form-inline button:hover {
+    background-color: #ff9900;
+}
+
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
