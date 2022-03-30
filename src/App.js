@@ -16,8 +16,11 @@ function App() {
 		}).then(() => {
 			allTask();
 		});
+	};
 
-		// setTaskData(...taskData, deleteTask);
+	// Complete Task
+	const completeTask = (TaskId) => {
+		console.log("completed task " + TaskId);
 	};
 
 	// Retrieve all Tasks
@@ -39,7 +42,13 @@ function App() {
 			<AddForm setTaskData={setTaskData} allTask={allTask} />
 			<br />
 			<div>
-				{taskData && <Task taskData={taskData} deleteTask={deleteTask} />}
+				{taskData && (
+					<Task
+						taskData={taskData}
+						deleteTask={deleteTask}
+						completeTask={completeTask}
+					/>
+				)}
 			</div>
 		</div>
 	);
