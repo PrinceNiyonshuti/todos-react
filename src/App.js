@@ -46,38 +46,7 @@ function App() {
 	return (
 		<div className="App">
 			<h1>My Todos</h1>
-			<div className="holder">
-				<form className="form-inline" onSubmit={newTask} ref={taskForm}>
-					<div className="inputHolder">
-						<label for="Name">Name</label>
-						<br />
-						<input
-							type="text"
-							id="name"
-							required
-							ref={taskName}
-							placeholder="Enter Name"
-							name="Name"
-						/>
-					</div>
-					<div className="inputHolder">
-						<label for="Name">Description</label>
-						<br />
-						<input
-							type="text"
-							id="description"
-							required
-							ref={taskDescription}
-							placeholder="Enter Description"
-							name="Name"
-						/>
-					</div>
-					<div>
-						<br />
-						<button type="submit">Add Todo</button>
-					</div>
-				</form>
-			</div>
+			
 			<br />
 			<div>{taskData && <Task taskData={taskData} />}</div>
 		</div>
