@@ -2,7 +2,7 @@
 
 import React from "react";
 import "./task.css";
-function task({ taskData }) {
+function task({ taskData,deleteTask }) {
     
     return (
         <div>
@@ -14,7 +14,7 @@ function task({ taskData }) {
                     </div>
                     <div className="task-actions">
                         <button className="btn complete-btn" type="submit">Complete</button>
-                        <button className="btn delete-btn" type="submit">Delete</button>
+                        <button onClick={() => deleteTask(task.id)} className="btn delete-btn" type="submit">Delete</button>
                     </div>
                 </div>
 			))}

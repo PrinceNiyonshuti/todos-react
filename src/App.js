@@ -1,28 +1,23 @@
 /** @format */
 
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Task from "./components/task";
+import AddForm from "./components/AddForm";
 import "./App.css";
 import "./index.css";
 
 function App() {
 	const [taskData, setTaskData] = useState(null);
-	// Form variables
-	const taskName = useRef();
-	const taskDescription = useRef();
-	const taskForm = useRef();
-	const newTask = (event) => {
-		event.preventDefault();
-		const name = taskName.current.value;
-		const description = taskDescription.current.value;
-		const task = { name, description };
 
-		fetch("http://localhost:8000/taskList", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(task),
-    }).then(() => {
-      fetch(`http://localhost:8000/taskList`)
+	// Remove Task
+	const deleteTask = (TaskId) => {
+		// const newTasks = taskData.filter((task) => task.id !== TaskId);
+		// setTaskData(newTasks);
+
+		const deleteTask = fetch(`http://localhost:8000/taskList/` + TaskId, {
+			method: "DELETE",
+		}).then(() => {
+			fetch(`http://localhost:8000/taskList`)
 				.then((res) => {
 					return res.json();
 				})
@@ -30,7 +25,8 @@ function App() {
 					setTaskData(data);
 				});
 		});
-		taskForm.current.reset();
+
+		// setTaskData(...taskData, deleteTask);
 	};
 
 	// Retrieve all Tasks
@@ -46,40 +42,11 @@ function App() {
 	return (
 		<div className="App">
 			<h1>My Todos</h1>
-			<div className="holder">
-				<form className="form-inline" onSubmit={newTask} ref={taskForm}>
-					<div className="inputHolder">
-						<label for="Name">Name</label>
-						<br />
-						<input
-							type="text"
-							id="name"
-							required
-							ref={taskName}
-							placeholder="Enter Name"
-							name="Name"
-						/>
-					</div>
-					<div className="inputHolder">
-						<label for="Name">Description</label>
-						<br />
-						<input
-							type="text"
-							id="description"
-							required
-							ref={taskDescription}
-							placeholder="Enter Description"
-							name="Name"
-						/>
-					</div>
-					<div>
-						<br />
-						<button type="submit">Add Todo</button>
-					</div>
-				</form>
-			</div>
+			<AddForm setTaskData={setTaskData} />
 			<br />
-			<div>{taskData && <Task taskData={taskData} />}</div>
+			<div>
+				{taskData && <Task taskData={taskData} deleteTask={deleteTask} />}
+			</div>
 		</div>
 	);
 }
