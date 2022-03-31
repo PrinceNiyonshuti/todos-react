@@ -1,24 +1,16 @@
 {
   "taskList": [
     {
-      "name": "Task 1",
-      "description": "Curabitur aliquet quam id dui posuere blandit. Pellentesque in",
-      "id": 1
-    },
-    {
       "name": "Task 2",
       "description": "Curabitur aliquet quam id dui posuere blandit. Pellentesque in",
+      "isComplete": true,
       "id": 2
     },
     {
       "name": "Task 3",
       "description": "Curabitur aliquet quam id dui posuere blandit. Pellentesque in",
+      "isComplete": false,
       "id": 3
-    },
-    {
-      "name": "Task 4",
-      "description": "Curabitur aliquet quam id dui posuere blandit. Pellentesque in",
-      "id": 4
     }
   ]
 }

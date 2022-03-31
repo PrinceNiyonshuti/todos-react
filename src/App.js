@@ -21,6 +21,13 @@ function App() {
 	// Complete Task
 	const completeTask = (TaskId) => {
 		console.log("completed task " + TaskId);
+		let updatedTodos = taskData.map((todo) => {
+			if (todo.id === TaskId) {
+				todo.isComplete = !todo.isComplete;
+			}
+			return todo;
+		});
+		setTaskData(updatedTodos);
 	};
 
 	// Retrieve all Tasks
