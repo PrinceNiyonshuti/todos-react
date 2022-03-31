@@ -11,26 +11,27 @@ function App() {
 
 	// Remove Task
 	const deleteTask = (TaskId) => {
-		// const newTasks = taskData.filter((task) => task.id !== TaskId);
-		// setTaskData(newTasks);
-
-		const deleteTask = fetch(`http://localhost:8000/taskList/` + TaskId, {
+		fetch(`http://localhost:8000/taskList/` + TaskId, {
 			method: "DELETE",
 		}).then(() => {
-			fetch(`http://localhost:8000/taskList`)
-				.then((res) => {
-					return res.json();
-				})
-				.then((data) => {
-					setTaskData(data);
-				});
+			allTask();
 		});
+	};
 
-		// setTaskData(...taskData, deleteTask);
+	// Complete Task
+	const completeTask = (TaskId) => {
+		console.log("completed task " + TaskId);
+		let updatedTodos = taskData.map((todo) => {
+			if (todo.id === TaskId) {
+				todo.isComplete = !todo.isComplete;
+			}
+			return todo;
+		});
+		setTaskData(updatedTodos);
 	};
 
 	// Retrieve all Tasks
-	useEffect(() => {
+	const allTask = () => {
 		fetch(`http://localhost:8000/taskList`)
 			.then((res) => {
 				return res.json();
@@ -38,14 +39,23 @@ function App() {
 			.then((data) => {
 				setTaskData(data);
 			});
+	};
+	useEffect(() => {
+		allTask();
 	}, []);
 	return (
 		<div className="App">
 			<h1>My Todos</h1>
-			<AddForm setTaskData={setTaskData} />
+			<AddForm setTaskData={setTaskData} allTask={allTask} />
 			<br />
 			<div>
-				{taskData && <Task taskData={taskData} deleteTask={deleteTask} />}
+				{taskData && (
+					<Task
+						taskData={taskData}
+						deleteTask={deleteTask}
+						completeTask={completeTask}
+					/>
+				)}
 			</div>
 		</div>
 	);

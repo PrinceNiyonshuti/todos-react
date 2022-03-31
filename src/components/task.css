@@ -15,9 +15,11 @@ h2{
 }
 p{
     margin-top: -20px;
-}
-.task-content{
     
+}
+.task-content p{
+    text-decoration:none;
+    color: whitesmoke;
 }
 .task-actions{
     margin-right: 3rem;
@@ -32,9 +34,16 @@ p{
 .complete-btn{
     border: solid 2px #6eb299;
     color: #6eb299;
-    ;
+    
 }
 .delete-btn{
     border: solid 2px #be6f6f;
     color: #be6f6f;
+}
+.task-complete h2,p{
+    color:#777676;
+    text-decoration: line-through;
+}
+.task-complete-btn{
+    display: none;
 }
