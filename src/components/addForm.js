@@ -11,7 +11,8 @@ function AddForm({ setTaskData }) {
 		event.preventDefault();
 		const name = taskName.current.value;
 		const description = taskDescription.current.value;
-		const task = { name, description };
+		const isComplete = false;
+		const task = { name, description, isComplete };
 
 		fetch("http://localhost:8000/taskList", {
 			method: "POST",
