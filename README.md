@@ -6,3 +6,7 @@ more additionally you can store your data instantly
 ## App Overview
 
 ![image](https://user-images.githubusercontent.com/46887030/161139076-eca793bb-e78c-4b5d-959e-259f5a7e582f.png)
+
+## Resources Used :
+- Json Server
+- 
